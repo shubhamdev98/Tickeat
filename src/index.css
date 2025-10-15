@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@layer components {
+  .container-default {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5;
+  }
+
+  .gap-custom {
+    @apply gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10;
+  }
+
+  .heading-custom {
+    @apply font-semibold text-gray-900 text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .text-custom {
+    @apply font-medium text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+}
+
+@theme {
+  --color-orange: #ff6500;
+  --color-gray: #4b5563;
+  --color-black: #000000;
+  --color-darkblue: #001f3f;
+  --color-light-gray: #d1d5db;
+}
