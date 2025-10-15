@@ -19,6 +19,7 @@ import m9 from '../../assets/movie/m9.avif'
 import m10 from '../../assets/movie/m10.avif'
 import m11 from '../../assets/movie/m11.avif'
 import m12 from '../../assets/movie/m12.avif'
+import m10
 
 // Event Images (if needed)
 import e1 from '../../assets/movie/e1.avif'
