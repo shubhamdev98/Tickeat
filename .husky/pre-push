@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Run full ESLint check before pushing. If ESLint fails, the push will be blocked.
+npx --no-install eslint src --ext .ts,.tsx,.js,.jsx
+
+# Then run commitlint for commit messages between HEAD~1..HEAD
 npx --no-install commitlint --from=HEAD~1 --to=HEAD
