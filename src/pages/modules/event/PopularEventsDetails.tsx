@@ -174,7 +174,7 @@ const GalleryItem: React.FC<EventGalleryItem> = ({ src, alt, colSpan }) => (
 const PopularEventsDetails: React.FC = () => {
   const { banner, info, about, guide, artists, gallery, venue, faqs, terms } = eventData
   const bannerRef = useRef<HTMLDivElement>(null)
-  const [bannerHeight, setBannerHeight] = useState<number | null>(null)
+  const [_bannerHeight, setBannerHeight] = useState<number | null>(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)

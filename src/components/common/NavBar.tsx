@@ -14,7 +14,7 @@ const NavBar: React.FC = () => {
   const [showLoginPopup, setShowLoginPopup] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState<string>('Ahmedabad, IN')
   const [avatar, setAvatar] = useState<boolean>(false)
-  const [username, setUsername] = useState<string>('Default User')
+  const [username, _setUsername] = useState<string>('Default User')
 
   const locations = ['Ahmedabad, IN', 'Mumbai, IN', 'Delhi, IN', 'Bangalore, IN', 'Chennai, IN']
   const menuItems = ['Home', 'Show Events', 'My Bookings', 'Create Event', 'Contact']
@@ -256,4 +256,3 @@ const NavBar: React.FC = () => {
 }
 
 export default NavBar
-\n

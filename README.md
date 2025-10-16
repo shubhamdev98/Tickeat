@@ -71,3 +71,29 @@ export default defineConfig([
   },
 ])
 ```
+
+## Getting started
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Install Husky hooks (installed automatically on `prepare` but run manually if needed)
+
+```bash
+npm run prepare
+```
+
+3. Run dev server
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+- This repository enforces Conventional Commits. The `commit-msg` hook validates messages.
+- Pre-commit runs a full ESLint check and then `lint-staged` (Prettier + eslint --fix + eslint --max-warnings=0). Fix lint errors before committing.
+

@@ -41,7 +41,7 @@ const MovieFilter: React.FC<MovieFilterProps> = ({
       languages: selectedLanguages,
       formats: selectedFormats,
     })
-  }, [selectedGenres, selectedRatings, selectedLanguages, selectedFormats])
+  }, [selectedGenres, selectedRatings, selectedLanguages, selectedFormats, onFilter])
 
   const FilterGroup = ({
     title,
@@ -205,7 +205,7 @@ const MovieFilter: React.FC<MovieFilterProps> = ({
       {/* Browse by Cinema button */}
       <div className="mt-3 md:mt-4">
         <button
-          onClick={() => console.log('Browse by Cinema clicked')}
+          onClick={() => onFilter?.({ genres: [], ratings: [], languages: [], formats: [] })}
           className="w-full bg-white text-black py-2 border border-gray-200 rounded-md font-medium hover:bg-gray-100 transition-colors"
         >
           Browse by Cinema

@@ -17,13 +17,12 @@ const PopulerEventFilter: React.FC<EventFilterProps> = ({
   categories = [],
   ratings = [],
   locations = [],
-  dates = [],
   onFilter,
 }) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [selectedRatings, setSelectedRatings] = useState<string[]>([])
   const [selectedLocations, setSelectedLocations] = useState<string[]>([])
-  const [selectedDates, setSelectedDates] = useState<string[]>([])
+  const [selectedDates] = useState<string[]>([])
   const [activeTab, setActiveTab] = useState<string | null>(null) // mobile popup state
 
   const toggleSelection = (
@@ -45,7 +44,7 @@ const PopulerEventFilter: React.FC<EventFilterProps> = ({
         dates: selectedDates,
       })
     }
-  }, [selectedCategories, selectedRatings, selectedLocations, selectedDates])
+  }, [selectedCategories, selectedRatings, selectedLocations, selectedDates, onFilter])
 
   const FilterGroup = ({
     title,

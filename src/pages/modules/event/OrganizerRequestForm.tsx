@@ -3,9 +3,9 @@ import BannerImg from '../../../assets/Login/Banner/6313470.jpg'
 import leftArrow from '../../../assets/icon/left-arrow_3849790.png' // adjust path
 import rightArrow from '../../../assets/icon/right_3864793.png' // adjust path
 import { AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineCheckCircle } from 'react-icons/ai'
-import { HiOutlineHome, HiOutlineDocument } from 'react-icons/hi'
-import { RiBankLine, RiSecurePaymentLine } from 'react-icons/ri'
-import { FiUpload, FiFile } from 'react-icons/fi'
+import { HiOutlineHome } from 'react-icons/hi'
+import { RiBankLine } from 'react-icons/ri'
+import { FiFile } from 'react-icons/fi'
 
 const OrganizerRequestForm: React.FC = () => {
   const [step, setStep] = useState(1)
@@ -54,7 +54,6 @@ const OrganizerRequestForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
     setSubmitted(true)
   }
 
@@ -310,7 +309,25 @@ const OrganizerRequestForm: React.FC = () => {
 }
 
 // Reusable Input Field
-const InputField = ({ label, name, Icon, type = 'text', placeholder, value, onChange }: any) => (
+type InputFieldProps = {
+  label: string
+  name: string
+  Icon?: React.ComponentType<Record<string, unknown>>
+  type?: string
+  placeholder?: string
+  value?: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+}
+
+const InputField: React.FC<InputFieldProps> = ({
+  label,
+  name,
+  Icon,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+}) => (
   <div className="space-y-2">
     <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
       {Icon && <Icon className="text-orange-600" />}
@@ -329,7 +346,25 @@ const InputField = ({ label, name, Icon, type = 'text', placeholder, value, onCh
 )
 
 // Reusable Textarea
-const TextareaField = ({ label, name, Icon, placeholder, value, onChange, rows }: any) => (
+type TextareaProps = {
+  label: string
+  name: string
+  Icon?: React.ComponentType<Record<string, unknown>>
+  placeholder?: string
+  value?: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  rows?: number
+}
+
+const TextareaField: React.FC<TextareaProps> = ({
+  label,
+  name,
+  Icon,
+  placeholder,
+  value,
+  onChange,
+  rows,
+}) => (
   <div className="space-y-2">
     <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
       {Icon && <Icon className="text-orange-600" />}
@@ -348,7 +383,14 @@ const TextareaField = ({ label, name, Icon, placeholder, value, onChange, rows }
 )
 
 // Reusable File Upload
-const FileUpload = ({ label, name, file, onChange }: any) => (
+type FileUploadProps = {
+  label: string
+  name: string
+  file: File | null
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const FileUpload: React.FC<FileUploadProps> = ({ label, name, file, onChange }) => (
   <label
     className={`group cursor-pointer border-2 border-dashed rounded-lg p-6 text-center transition-all duration-300 ${
       file ? 'border-green-400 bg-green-50' : 'border-gray-300'

@@ -1,5 +1,6 @@
 import React from 'react'
-import Slider, { Settings } from 'react-slick'
+import Slider from 'react-slick'
+// Settings type not required here
 import { banners } from '../../data/app_data/data'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
