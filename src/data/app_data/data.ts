@@ -148,6 +148,14 @@ export const movies: Movie[] = [
     votes: '15.2K',
     img: m5,
   },
+  {
+    id: 6,
+    title: 'From the World of John Wick: Ballerina',
+    genre: 'Action/Thriller',
+    rating: 8.7,
+    votes: '15.2K',
+    img: m5,
+  },
 ]
 
 export const allMovies: Movie[] = [

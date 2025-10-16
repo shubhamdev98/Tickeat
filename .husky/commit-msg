@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit "$1"
+# pass the commit message file path ($1) to commitlint
+npx --no-install @commitlint/cli --edit "$1"

@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit "$1"
+# Run lint-staged on staged files (don't run commitlint here — it's handled by commit-msg)
+npx --no-install lint-staged
